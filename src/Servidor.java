@@ -31,6 +31,11 @@ public class Servidor {
             public float restar(float numero1, float numero2) throws RemoteException {
                 return numero1 - numero2;
             }
+
+            @Override
+            public double raizCuadrada(float numero) throws RemoteException {
+                return Math.sqrt(numero);
+            }
         }, 0);
 
         Registry registry = LocateRegistry.createRegistry(PUERTO);

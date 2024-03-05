@@ -14,7 +14,7 @@ public class Cliente {
         Scanner sc = new Scanner(System.in);
         int eleccion;
         float numero1, numero2, resultado = 0;
-        String menu = "\n\n------------------\n\n[-1] => Salir\n[0] => Sumar\n[1] => Restar\n[2] => Multiplicar\n[3] => Dividir\nElige: ";
+        String menu = "\n\n------------------\n\n[-1] => Salir\n[0] => Sumar\n[1] => Restar\n[2] => Multiplicar\n[3] => Dividir\n[4] => Raiz cuadrada\nElige: ";
         do {
             System.out.println(menu);
 
@@ -33,12 +33,17 @@ public class Cliente {
             		numero1 = 0;
             	}
 
-            	System.out.println("Ingresa el número 2: ");
-            	try{
-                	numero2 = Float.parseFloat(sc.nextLine());
-            	}catch(NumberFormatException e){
-            		numero2 = 0;
-            	}
+				if (eleccion != 4) {
+					System.out.println("Ingresa el número 2: ");
+					try{
+						numero2 = Float.parseFloat(sc.nextLine());
+					}catch(NumberFormatException e){
+						numero2 = 0;
+					}
+				} else {
+					numero2 = 0;
+				}
+
                 switch (eleccion) {
 	                case 0:
 	                    resultado = interfaz.sumar(numero1, numero2);
@@ -52,6 +57,12 @@ public class Cliente {
 	                case 3:
 	                    resultado = interfaz.dividir(numero1, numero2);
 	                    break;
+					case 4:
+						resultado = (float) interfaz.raizCuadrada(numero1);
+						break;
+					default:
+						System.out.println("La opcion no es valida");
+						continue;
 	            }
 
                 System.out.println("Resultado => " + String.valueOf(resultado));
