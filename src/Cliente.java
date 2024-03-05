@@ -44,9 +44,10 @@ public class Cliente {
 	                    resultado = interfaz.sumar(numero1, numero2);
 	                    break;
 	                case 1:
+						resultado = interfaz.restar(numero1, numero2);
 	                    break;
 	                case 2:
-	                    resultado = interfaz.multiplicar(numero1, numero1);
+	                    resultado = interfaz.multiplicar(numero1, numero2);
 	                    break;
 	                case 3:
 	                    resultado = interfaz.dividir(numero1, numero2);
